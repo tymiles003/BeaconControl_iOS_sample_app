@@ -26,8 +26,15 @@ NSString * const BeaconManagerPropertiesUpdateDidFinishNotification = @"BeaconMa
 NSString * const BeaconManagerFirmwareUpdateDidStartNotification = @"BeaconManagerFirmwareUpdateDidStartNotification";
 NSString * const BeaconManagerFirmwareUpdateDidProgressNotification = @"BeaconManagerFirmwareUpdateDidProgresstNotification";
 NSString * const BeaconManagerFirmwareUpdateDidFinishNotification = @"BeaconManagerFirmwareUpdateDidFinishNotification";
-
-@interface BeaconCtrlManager () <BCLBeaconCtrlDelegate>
++// Test local API App credentials:
+ +// UID:    eb3b5a29d2ae86a90ff4dce44da9725c0a91e40b95a180460a9355124844e08c
+ +// Secret: ea41a5f1551c2ab992a21dc00cb6b0b9f3aaa4b0976bcee25a4f0ccf3d1c9d02
+ +// Test local API S2S API App credentials:
+ +// UID:    c450dcc61b722175e49e2750d5e872eb7c9dc40e67f88ab78aca32b9cc15c020
+ +NSString * const API_SERVER_UUID = @"e2578487540bbedeea1f5222252441a8585225e0dc5c419e0ecfb3a96fa4bd86";
+ +// Secret: 1fd6ef3a820532440b912032c3936c2e1c3ba3271e163c48ae36fe2d506661e1
+ +NSString * const API_SERVER_SECRET = @"ec96ca3da391dec26f03e20d0158f5a4f74112d4297bf63e2fa2276dfb6491f4";
+ +@interface BeaconCtrlManager () <BCLBeaconCtrlDelegate>
 
 @property (nonatomic, copy) NSString *pushNotificationDeviceToken;
 @property (nonatomic) BCLBeaconCtrlPushEnvironment pushEnvironment;
