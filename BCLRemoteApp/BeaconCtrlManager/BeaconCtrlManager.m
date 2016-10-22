@@ -83,9 +83,10 @@ NSString * const BeaconManagerFirmwareUpdateDidFinishNotification = @"BeaconMana
 
 - (void)setupForExistingAdminUserWithEmail:(NSString *)email password:(NSString *)password completion:(void (^)(BOOL, NSError *))completion
 {
-    self.beaconCtrlAdmin = [BCLBeaconCtrlAdmin beaconCtrlAdminWithCliendId:@"76b8780413c3902d76ae7a05b9a17dcb04ed0696147696d3b4ff3302269efc32" clientSecret:@"55f560c85ce5e645c928eb72537a1183b87b947d9d4129a8786c10f6bff3613b"];
-    
-    __weak typeof(self) weakSelf = self;
+ 
+    self.beaconCtrlAdmin = [BCLBeaconCtrlAdmin beaconCtrlAdminWithCliendId:API_SERVER_UUID clientSecret:API_SERVER_SECRET];        self.beaconCtrlAdmin = [BCLBeaconCtrlAdmin beaconCtrlAdminWithCliendId:API_SERVER_UUID clientSecret:API_SERVER_SECRET];   
+   
+ __weak typeof(self) weakSelf = self;
     
     [self.beaconCtrlAdmin loginAdminUserWithEmail:email password:password completion:^(BOOL success, NSError *error) {
         if (!success) {
@@ -101,7 +102,7 @@ NSString * const BeaconManagerFirmwareUpdateDidFinishNotification = @"BeaconMana
 
 - (void)setupForNewAdminUserWithEmail:(NSString *)email password:(NSString *)password passwordConfirmation:(NSString *)passwordConfirmation completion:(void (^)(BOOL, NSError *))completion
 {
-    self.beaconCtrlAdmin = [BCLBeaconCtrlAdmin beaconCtrlAdminWithCliendId:@"76b8780413c3902d76ae7a05b9a17dcb04ed0696147696d3b4ff3302269efc32" clientSecret:@"55f560c85ce5e645c928eb72537a1183b87b947d9d4129a8786c10f6bff3613b"];
+    self.beaconCtrlAdmin = [BCLBeaconCtrlAdmin beaconCtrlAdminWithCliendId:API_SERVER_UUID clientSecret:API_SERVER_SECRET];
     
     __weak typeof(self) weakSelf = self;
     
